@@ -1,0 +1,90 @@
+---
+layout: kayak
+subject: Great Deals Today
+---
+
+<container>
+    <row class="deal_of_day">
+        <!-- Even though there is only one column, we have to put all of this into one just to keep the same conventions.  If we don't do this, the image, and all of the text, will occupy the entire <row> container, from edge to edge, and we won't be able to see the <row>'s background color. -->
+        <columns>
+            <h2>Deal of the Day</h2>
+            <!-- <img src="{{root}}{{kayakEmail.dealOfTheDay.image}}"/> -->
+            <!-- The <img> above worked, but Joe did the one below.  I tried the one below without "" after src= and it still worked. -->
+            <img src="{{kayakEmail.dealOfTheDay.image}}" />
+            <p>{{kayakEmail.dealOfTheDay.location}}: {{kayakEmail.dealOfTheDay.description}}</p>
+            <span class="save_amount">{{kayakEmail.dealOfTheDay.saveAmount}}</span>
+            <span class="tiny_info">{{kayakEmail.dealOfTheDay.tinyInfo}}</span>
+            <span class="price">${{kayakEmail.dealOfTheDay.price}}+</span>
+            <!-- We had to use <center> tags in order to center the .button <span>. -->
+            <center>
+                <!-- When I removed the "" from the href=, it still worked properly. -->
+                <a href="{{kayakEmail.dealOfTheDay.link}}" class="button">See Deal</a>
+            </center>
+        </columns>
+    </row>
+</container>
+
+<container>
+    <!-- We put this .content-area <row> in its own container so that it would not affect the size of the previous container.  When we added padding to the .content-area <row>, it was making the previous container larger than the header. -->
+    <row class="content-area">
+        <columns class="first-offer">
+            <!-- We want to create a <row> for each one of the offers.  We will do this by using Handlebars's each helper. -->
+            <!-- This each helper will loop over an array of objects and for each object, it will create a <row>. -->
+            {{#each kayakEmail.offers}}
+                <row class="offer">
+                    <columns>
+                        <!-- We are going to use this to mention the object, or to target the object. -->
+                        <!-- When we mention this, we are talking about a single object, it could be the first, or any other one.  I think it's the current one being looped over. -->
+                        <!-- <img src="{{root}}/assets/img/kayak_files/cancun.png"/> -->
+                        <!-- Whenever you change the .json data, like we did when we changed the china.png to the china.jpg, you have to press Control+C and use npm start or npm run build again.  When you do a change and it is still not showing up after using npm start, use npm run build, instead. -->
+                        <!-- npm run build will compress the images. -->
+                        <!-- In order to test our email out, we have to put the images somewhere.  Joe decided to use imgur for this. -->
+                        <img src="{{this.image}}"/>
+                        <!-- <p>Cancun: 4 nights with air and Melody Maker Cancun stay. Price reflects MIA departure, other cities available.</p> -->
+                        <p>{{this.location}}: {{this.description}}</p>
+                        <!-- <span class="save_amount">Save up to 65%</span> -->
+                        <span class="save_amount">{{this.saveAmount}}</span>
+                        <!-- <span class="tiny_info">CheapCaribbean.com</span> -->
+                        <span class="tiny_info">{{this.tinyInfo}}</span>
+                        <!-- <span class="price">$689+</span> -->
+                        <span class="price">${{this.price}}+</span>
+                        <!-- <a href="#" class="button">See Deal</a> -->
+                        <a href="{{this.link}}" class="button">See Deal</a>
+                    </columns>
+                </row>
+            {{/each}}
+        </columns>
+    </row>
+</container>
+
+<container>
+    <row class="content-area">
+        <columns>
+            <row class="offer last-offer">
+                <columns>
+                    <row>
+                        <columns>
+                            <!-- <img src="{{root}}/assets/img/kayak_files/airplane_dark.png" class="group-icons" /> -->
+                            <img src="https://i.imgur.com/clSnF33.png" class="group-icons" />
+                        </columns>
+                    </row>
+                    <h4>Still looking?  There's more</h4>
+                    <p>
+                        Search hundreds of deals to suit your budget on flights, packages, cruises and much more.
+                    </p>
+                    <a href="#" class="button">See Deal</a>
+                </columns>
+            </row>
+        </columns>
+    </row>
+</container>
+
+<!-- After everything is done and you use npm run build, go into the dist folder.  This folder is where everything gets compiled to.  When you look at the index.html file in here, you will notice that everything is inlined and minified.  Select everything inside of the index.html file and copy it.  Then paste this into the template area in Mailchimp, or some other email platform.
+
+<!-- When you are doing a mobile preview in Mailchimp, sometimes things may appear to not align properly.  This is usually happening becuase Mailchimp decides to use a much smaller screen size than it's supposed to.  Don't pay attention to that because this particular email will work perfectly on your phone. -->
+
+<!-- When Joe first sent the Mailchimp email to himself, it had issues.  The images of the countries were not being shown.  I did not have any issues and these images were showing for me.  Sometimes you cannot see the element and need to open up the browser window as much as possible.  Joe found the <img> with the appropriate src, but for whatever reason, it did not go through.  The issue Joe was having was that he forgot to put https: before the rest of the content in the src attributes in the <img>s. -->
+
+<!-- After the code is minified and ready to go, you can always go back and add some if statements in order to make it work with some email clients.  You can do this by unminifying the code using a site like unminify.com to make the code easier to work with. -->
+
+<!-- Using frameworks, like Foundation, is great because you normally just have to change the content area and leave other parts of the email unchanged.  This will speed up your process considerably. -->

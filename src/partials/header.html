@@ -1,0 +1,110 @@
+<!-- We are taking this code from the index.html file and creating this partial so that we can reuse this code and never have to type it again. -->
+
+<container>
+    <row class="header">
+        <!-- Here we use style="vertical-align: middle;" in order to center the Kayak logo vertically.  valign was not doing anything. -->
+        <columns small="6" large="6" valign="middle" style="vertical-align: middle;">
+            <!-- What {{root}} is going to do is that it is going to give us the location of the project.  It doesn't matter if it's in production or development mode. -->
+            <!-- <img
+                src="{{root}}/assets/img/kayak_files/logo_white.png" 
+                class="logo_white"
+            /> -->
+            <img
+                src="https://i.imgur.com/FSQkyhy.png" 
+                class="logo_white"
+            />
+        </columns>
+        <!-- Here we also use the same valign and style as we do for the columns with the image with the logo_white class above.  None of these two things are doing anything because the columns with the image with the user_icon class is already centered vertically. -->
+        <columns small="6" large="6" valign="middle" style="vertical-align: middle;">
+            <!-- We had to add the float-right class to the image in order to align the image with the right. -->
+            <!-- <img
+                src="{{root}}/assets/img/kayak_files/user.png"
+                class="user_icon float-right"
+            /> -->
+            <img
+                src="https://i.imgur.com/DCoGzgx.png"
+                class="user_icon float-right"
+            />
+        </columns>
+    </row>
+    <row class="sub-header">
+        <!-- We created three additional columns and one row so that we can have more control.  This way we can make the area that contains the <a> smaller. -->
+        <!-- We are removing the <columns>s that are centering the one in the middle for now.  We are doing this because we will attempt to do the .subheader <row> without the Foundation framework. -->
+        <!-- <columns>
+        </columns> -->
+        <!-- Here we use style="width: 90%;" to make the area that contains the <a> smaller. -->
+        <!-- The reason we did this is to make sure that this area is centered right in the middle. -->
+        <columns style="width: 90%;">
+            <row>
+                <columns small="4" large="3">
+                    <!-- We added the .text-center to the four <a> inside of the .sub-header row in order to center everthing inside of each of these.  This does not actually seem to do anything and everything looked centered before this was added. -->
+                    <a href="#" class="text-center">
+                        <!-- We removed the .float-left from the images below. -->
+                        <!-- <img
+                            src="{{root}}/assets/img/kayak_files/airplane.png"
+                            class="icons"
+                        /> -->
+                        <img
+                            src="https://i.imgur.com/3Ww3dY2.png"
+                            class="icons"
+                        />
+                        Flights
+                    </a>
+                </columns>
+                <!-- This columns and span combination is for a single vertical line that goes in between two <a>.  This will be repeated more times to make sure that all of the spaces between two <a> are covered. -->
+                <!-- The elements with the .show-for-large will be hidden on small screens and only be shown on large screens. -->
+                <columns class="show-for-large" style="width: 1%;">
+                    <span class="menu-divider"></span>
+                </columns>
+                <columns small="4" large="3">
+                    <a href="#" class="text-center">
+                        <!-- <img
+                            src="{{root}}/assets/img/kayak_files/bed.png"
+                            class="icons"
+                        /> -->
+                        <img
+                            src="https://i.imgur.com/wfC1Voy.png"
+                            class="icons"
+                        />
+                        Hotels
+                    </a>
+                </columns>
+                <columns class="show-for-large" style="width: 1%;">
+                    <span class="menu-divider"></span>
+                </columns>
+                <columns small="4" large="3">
+                    <a href="#" class="text-center">
+                        <!-- <img
+                            src="{{root}}/assets/img/kayak_files/car.png"
+                            class="icons"
+                        /> -->
+                        <img
+                            src="https://i.imgur.com/noF4Vpy.png"
+                            class="icons"
+                        />
+                        Cars
+                    </a>
+                </columns>
+                <columns class="show-for-large" style="width: 1%;">
+                    <span class="menu-divider"></span>
+                </columns>
+                <!-- We set small="4" here even thought it's not going to show on mobile in order to keep this consistent. -->
+                <columns small="4" large="3" class="show-for-large">
+                    <a href="#" class="text-center">
+                        <!-- <img 
+                            src="{{root}}/assets/img/kayak_files/umbrella.png" 
+                            class="icons"
+                        /> -->
+                        <img 
+                            src="https://i.imgur.com/J93HA7l.png" 
+                            class="icons"
+                        />
+                        Packages
+                    </a>
+                </columns>
+            </row>
+        </columns>
+        <!-- <columns>
+        </columns> -->
+    </row>
+</container>

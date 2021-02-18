@@ -1,0 +1,137 @@
+---
+layout: promotional
+subject: 70% Off on Labor Day
+percentage: 70
+---
+<!-- layout: promotional is how we let Panini know that we are using the promotional layout.  This is a variable. -->
+<!-- subject is another variable. -->
+<!-- You can add variables in the section that layout and subject are located in.  The variables will show up inside of our email. -->
+<!-- Using this is great because if we want to reuse the same layout later on, we just need to change the values for the variables on the top for many changes. -->
+
+<!-- ---
+layout: index-layout
+subject: My Email Templates
+--- -->
+
+<!-- The container is going to be the maximum width that the email is going to be. -->
+<!-- You always want a container wrapping around your grid system or any type of content that you are creating. -->
+<!-- <container>
+  <row>
+    image
+  </row>
+  <row>
+    <columns small="12" large="12">home</columns>
+    
+  </row>
+  <row class="collapse"> -->
+    <!-- As long as the columns add up to 12, you are going to be fine and are going to be able to control everything, however you want it. -->
+    <!-- <columns small="6" large="6">about</columns>
+    <columns small="6" large="6">contact</columns>
+  </row>
+  <row> -->
+    <!-- The offset is used to move the column.  Here the column has a width of 4 on large screens, so it needs an offset of 8, if we want to move it all the way to the right. -->
+    <!-- <columns small="12" large="4" class="large-offset-8">shop</columns> -->
+    <!-- Now we also set the column width to 4 on small screens and added an offset of 8. -->
+    <!-- <columns small="4" large="4" class="large-offset-8 small-offset-8">shop</columns> -->
+    <!-- Now the small screen column width is 6 and the offset for small screens is set to 6.  Now the column for small screens starts at the halfway point. -->
+    <!-- <columns small="6" large="4" class="large-offset-8 small-offset-6">shop</columns> -->
+    <!-- <columns small="6" large="12" class="small-offset-6">shop</columns>
+  </row>
+</container> -->
+
+<!-- So you have a container in order to have everything within the container. -->
+<container>
+  <!-- This is how we do the header.  We will give this row a class of collapse to remove any padding.  We will give this row a class of header to know it's the header.  We will target the header class in the _template.scss file to style it. -->
+  <!-- Then you have a row to divide the different sections. -->
+  <row class="collapse header">
+    <!-- Then we have our columns.  Within the columns, we can change things like padding.  We can change the different types of spacing if we'd like. -->
+    <!-- Whenever you add any elements inside of the columns, you can always come to the _template.scss file and change the elements from there. -->
+    <columns small="12" large="12">
+      <!-- There are different alignment classes that you can use. -->
+      <!-- This will align the text to the center.  There will still be a margin-bottom left, though.  This is coming from our typography.scss and we may want to remove that.  You can go to the _settings.scss file and change this margin-bottom to 0.  This way you get more control over it. -->
+      <!-- <h1 class="text-center">{{subject}}</h1> -->
+      <!-- We are running this, laborDay.title, from the data that we have. -->
+      <!-- The good thing about this is that every time you have a Labor Day sale, you can just make changes to the laborDay.json file. -->
+      <h1 class="text-center">{{laborDay.title}}</h1>
+    </columns>
+  </row>
+  <row class="collapse menu">
+    <!-- To center a column, put it between two other columns.  The columns on either side will fill whatever is left of the 12 column grid. -->
+    <columns></columns>
+    <columns small="8" large="8">
+      <!-- Here you are centering the links inside of their columns container using two center tags. -->
+      <center>
+        <a href="#">link</a>
+        <a href="#">link</a>
+        <a href="#">link</a>
+        <a href="#">link</a>
+      </center>
+    </columns>
+    <columns></columns>
+  </row>
+  <row>
+    <columns small="12" large="12">home</columns>
+  </row>
+  <!-- The each helper is like a forEach loop.  This is basically like running a loop over every single item that we have inside of the products objects array. -->
+  {{#each laborDay.products}}
+  
+  {{/each}}
+  <row class="collapse">
+    <!-- I had to add style="vertical-align: middle;" to this because valign="middle" is not doing anything.  What this does is center the <h2> vertically. -->
+    <columns small="6" large="6" valign="middle" style="vertical-align: middle;">
+      <!-- We can center the content with class="text-center" since this is text. -->
+      <h2 class="text-center">Goku the Super Saiyan</h2>
+    </columns>
+    <columns small="6" large="6">
+      <!-- If you want to center an image, all you have to do is put the image element between two center tags.  This will center the image inside of its container. -->
+      <center>        
+        <img src="https://i.pinimg.com/originals/ce/48/24/ce482474873d583792b02ed72cfc3742.jpg">
+      </center>
+    </columns>
+  </row>
+  <!-- The spacer tags will give you a vertical space.  In this case, they will give you a vertical space of 100 pixels. -->
+  <spacer size="100"></spacer>
+  <row>
+    <columns small="6" large="12" class="small-offset-6">
+      <h4>shop for {{percentage}}% Off</h4>
+      <spacer size="40"></spacer>
+      <!-- {{#repeat 10}}  
+        <h4>img</h4>
+      {{/repeat}} -->
+      <!-- The markdown helper will let you include markdown in your page. -->
+      <!-- {{#markdown}}
+        # title
+        lorem ipsum chilling
+
+        ### another title
+        lorem ipsum
+      {{/markdown}} -->
+      <!-- This is the bold custom helper that we created. -->
+      {{#bold}}
+        My Bold Text
+      {{/bold}}
+      {{#mainButton}}
+        Visit our home page
+      {{/mainButton}}
+    </columns>
+  </row>
+</container>
+<!-- A wrapper allows us to go the full width of the page and be able to change the color of it. -->
+<!-- <wrapper class="footer">
+  <container class="footer-container">
+    <row>
+      <columns></columns>
+      <columns small="8" large="8">
+        <center>
+          <a href="#">link</a>
+          <a href="#">link</a>
+          <a href="#">link</a>
+          <a href="#">link</a>
+        </center>
+      </columns>
+      <columns></columns>
+    </row>
+  </container>
+</wrapper> -->
+
+<!-- Another cool feature that Joe likes is creating partials. -->

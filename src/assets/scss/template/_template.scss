@@ -1,0 +1,594 @@
+html,
+body,
+.body {
+    background: #e4e5ea;
+    background-color: #e4e5ea;
+    // This padding is going to allow our footer to be a little more scrollable.
+    // Once we are done, we can remove the padding-bottom; below.
+    // padding-bottom: 300px;
+}
+
+.header {
+    // $primary-color is coming from the Global section of the _settings.scss file.
+    background: $primary-color;
+    background-color: $primary-color;
+
+    .columns {
+        padding-bottom: 20px;
+        padding-right: 20px !important;
+        padding-left: 20px !important;
+        padding-top: 20px;
+    
+        .logo_white {
+            width: 128px;
+        }
+
+        .user_icon {
+            width: 32px;
+        }
+    }
+}
+
+.sub-header {
+    background: #d65600;
+    background-color: #d65600;
+    // This white-space: nowrap; is needed in order to remove the wrapping that was happening with the umbrella image and Packages text in the .sub-header <columns>.
+    //  **********
+    // white-space: nowrap;
+
+    .columns {
+        padding-bottom: 5px;
+        // padding-right: 5px !important;
+        padding-right: 10px !important;
+        // padding-left: 5px !important;
+        padding-left: 10px !important;
+        padding-top: 5px;
+
+        a {
+            // We replaced the color white to #ffffff because sometimes you get errors in some places if you don't.
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+        
+            .icons {
+                width: 20px;
+                margin-right: 5px;
+                display: inline-block;
+                vertical-align: bottom;
+            }
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .menu-divider {
+            display: block;
+            height: 20px;
+            width: 1px;
+            background: #ff690f;
+            background-color: #ff690f;
+        }
+    }  
+}
+
+.deal_of_day {
+    background: #13191f;
+    background-color: #13191f;
+
+    .columns {
+        th {
+            padding-top: 30px;
+            padding-bottom: 20px;
+        }
+    }
+
+    img {
+        padding-bottom: 20px;
+    }
+
+    h2 {
+        color: #ffffff;
+        // When the font-weight was changed from 700 to 900 and the font-size: 30; was added, nothing seemed to happen.  Only when the font-weight: 700; was added, was there any change.
+        font-weight: 900;
+        font-size: 30px;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    p {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+
+    span {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 16px;
+        text-align: center;
+        display: block;
+
+        &.save_amount {
+            font-size: 14px;
+        }
+
+        &.tiny_info {
+            font-size: 10px;
+            font-weight: 300;
+            padding-bottom: 10px;
+        }
+
+        &.price {
+            font-size: 20px;
+            font-weight: 600;
+            padding-bottom: 10px;
+        }
+    }
+
+    .button {
+        // display: inline-block;
+        display: block;
+        width: 150px;
+        // I don't think that text-align: center; is doing anything.
+        text-align: center;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        color: #ffffff;
+
+        // Some clients let you use :hover, while others don't, but you can still add it here for those that support it.
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+.content-area {
+    background: #f1f4f7;
+    background-color: #f1f4f7;
+
+    & > tbody > tr > th {
+        // padding-top: 16px;
+        padding-top: 0;
+    }
+
+    // This was not working because we had it with the & sign.  When you do that, you are targeting an element that has both the .content-area and the .first-offer attached.
+    // &.first-offer {
+    .first-offer {
+        // This targets the first th directly under the .first-offer element.
+        // & > th {
+        //     padding-top: 16px !important;
+        // }
+        padding-top: 16px !important;
+    }
+
+    .offer {
+        background: #ffffff;
+        background-color: #ffffff;
+
+        .columns {
+            th {
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-right: 20px;
+                padding-left:  20px;
+            }
+
+            // Here we are targeting the <table> within the .columns element.  We cannot use box-sizing: border-box; for this like we can with regular <div>s, which will keep these inside of whatever size you give them.  We want this <table> to be a fixed size, instead of expanding.
+            & > table {
+                // If you want, you can also set a maximum width.  What this is going to do is if a <table> ever goes beyond 568px, it will stop this.  This seems unnecessary because this doesn't seem to do anything.
+                max-width: 568px;
+                // Now the <table> is fixed.
+                table-layout: fixed;
+            }
+        }
+    
+        img {
+            padding-bottom: 20px;
+        }
+    
+        h2 {
+            color: #ffffff;
+            font-weight: 900;
+            font-size: 30px;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+    
+        p {
+            color: #334755;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+    
+        span {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            display: block;
+    
+            &.save_amount {
+                font-size: 14px;
+                color: #1a88f3;
+            }
+    
+            &.tiny_info {
+                font-size: 10px;
+                font-weight: 500;
+                padding-bottom: 10px;
+                color: #334755;
+            }
+    
+            &.price {
+                font-size: 20px;
+                font-weight: 600;
+                padding-bottom: 10px;
+                color: #334755;
+            }
+        }
+    
+        .button {
+            background: #14181c;
+            background-color: #14181c;
+            // We had to set this to display: block; from display: inline-block; in order to get margin: 0 auto; to center the .button elements.
+            display: block;
+            width: 150px;
+            text-align: center;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            color: #ffffff;
+            // This will center the .button elements.
+            margin: 0 auto;
+    
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        // We are doing this because we also want to keep all of the styles that we did for the .offer, but the element with .last-offer, we want to target it specifically.
+        &.last-offer {
+            .group-icons {
+                width: 190px;
+                // This centers the .group-icons <img>.
+                margin: 0 auto;
+                // This removes the padding that seems to be there by some default setting.
+                padding-bottom: 0;
+            }
+
+            h4 {
+                color: #334755;
+                font-weight: 600;
+                font-size: 16px;
+                text-align: center;
+                padding-bottom: 20px;
+            }
+
+            p {
+                color: #334755;
+                font-weight: 400;
+                font-size: 14px;
+                text-align: center;
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+
+.footer-top {
+    background: #222d37;
+    background-color: #222d37;
+    // This color: white; does not seem to be doing anything.
+    color: #ffffff;
+
+    // This selector did not work for targeting the area I wanted, so I had to use the one directly below.
+    // & > tbody > tr {
+    //     vertical-align: middle !important;
+    // }
+
+    & > tbody > tr > th {
+        vertical-align: middle;
+        // padding-bottom: 20px !important;
+        // We removed the 5px that we added in the & > table > tbody > tr > th > table > tbody > tr > th {}.
+        padding-bottom: 25px !important;
+        padding-top: 30px !important;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        // I set padding-right: 15px !important; so that it would look more like Joe's, but on an iPhone 5/SE, instead of an iPhone X.
+        // padding-right: 15px !important;
+    }
+
+    // We did this because we want to make sure that the only padding that gets applied to the .footer-top element is the padding in the & > tbody > tr > th {}.
+    th {
+        // padding-bottom: 5px;
+        padding-bottom: 0;
+        // padding-top: 5px;
+        padding-top: 0;
+    }
+
+    // I could not target this using the .footer-top-logo-and-text and had to use & > tbody > tr > th instead.
+    // .footer-top-logo-and-text {
+    //     vertical-align: middle;
+    // }
+
+    // I had to add this in order to vertically center the logo on the .footer-top <row>.
+    .footer-top-logo {
+        vertical-align: middle;
+    }
+
+    .circle-logo {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .call-to-action {
+        display: block;
+        font-size: 14px;
+        // hyphens: none; makes sure that there are no words wrapped with hyphens.  If there is no space for a word on the current line, then it just goes to the next line.
+        hyphens: none;
+        // We are using color: white; here because Joe had problems with his email in production mode because the color was not white when he ran the npm run build command.  I did not have this issue.
+        color: #ffffff;
+        // Joe needed to add padding-left: 10px; but I did not.
+        // padding-left: 10px;
+    }
+
+    .info {
+        // This is not really needed because it is already on its own line because the .call-to-action element is already set to display: block; and is on its own line.
+        display: block;
+        font-size: 12px;
+        hyphens: none;
+        // We are using color: white; here because Joe had problems with his email in production mode because the color was not white when he ran the npm run build command.  I did not have this issue.
+        color: #ffffff;
+        // Joe needed to add padding-left: 10px; but I did not.
+        // padding-left: 10px;
+    }
+
+    // Now we are actually targeting both <span> in the .info-section element.
+    .info-section > table > tbody > tr > th {
+        // **********
+        // I don't really need this because there is already some sort of default padding on mine.  I decided to add this again because it is needed on smaller screens.
+        // padding-left: 10px;
+        padding-left: 5px !important;
+        // color: white;
+        color: #ffffff !important;
+    }
+
+    .store-logos {
+        img {
+            height: 40px;
+            width: 120px;
+            display: block;
+            margin: 0 auto;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        // Joe targeted the App Store and the Google Play logos using .columns th, but I had to use .columns.
+        // .columns th {
+        // // .columns {
+        //     // padding-right: 5px;
+        //     // padding-left: 5px;
+        // }
+
+        & > table > tbody > tr > th > table > tbody > tr > th {
+            // This doesn't do anything for me.
+            padding-bottom: 5px;
+        }
+    }
+}
+
+.footer-social {
+    background: #14181c;
+    background-color: #14181c;
+    
+    & > tbody > tr > th {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    // Joe added this th {} because other th elements, besides the ones we wanted, were being selected above, so he's setting the padding-top and padding-bottom to 0 on these.  We were getting an extra padding before this.
+    th {
+        padding-top: 0;
+        padding-bottom: 0;
+        // I added the padding-right: 0; and padding-left: 0; and now my .footer-social <row> looks like Joe's.
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .logo-section {
+        img {
+            width: 128px;
+        }
+    }
+
+    .social-icons {
+        img {
+            width: 32px;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+.footer-menu {
+    background: #14181c;
+    background-color: #14181c;
+    border-top: 1px solid #2d3e4b;
+    border-bottom: 1px solid #2d3e4b;
+
+    .columns {
+        padding-bottom: 5px;
+        padding-right: 10px !important;
+        padding-left: 10px !important;
+        padding-top: 5px;
+
+        a {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 700;
+        
+            .icons {
+                width: 20px;
+                margin-right: 5px;
+                display: inline-block;
+                vertical-align: bottom;
+            }
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .menu-divider {
+            display: block;
+            height: 20px;
+            width: 1px;
+            background: #2d3e4b;
+            background-color: #2d3e4b;
+        }
+    }  
+}
+
+.footer-bottom {
+    background: #14181c;
+    background-color: #14181c;
+
+    & > tbody > tr > th {
+        // Here we are putting a 30px padding around the content of the .footer-bottom <row>.  We could have just used padding: 30px !important, but Joe used all four properties, instead.  Our table has not grown to more than 600px.  It is 540px and 30px of padding on each side.
+        // padding: 30px !important;
+        padding-left: 30px !important;
+        padding-bottom: 30px;
+        padding-right: 30px !important;
+        // !important was not necessary for the following.
+        padding-top: 30px !important;
+    }
+
+    .lower-links {
+        // We took this out and placed it here in order to target the class itself.  We had to do this because the way this framework works is that it looks for the class, or element with a class.  Then it says, we're in .lower-links, we know where that's at.  Then inside of it, there's an element with the .link.  Then it will give it all its styles.
+        // I did not really need to do this because I did not have issues, but Joe did.
+        .link {
+            font-size: 12px !important;
+            // color: #ffffff !important;
+            // I had to remove !important because it was overriding the hover color when npm run build was done.
+            color: #ffffff;
+            margin-right: 10px;
+
+            &:nth-child(4) {
+                margin-right: 0;
+            }
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+        
+        // When you do this and try to be specific, the framework will give you errors.  The framework is not built for that.  If it was in the web, we could use it, but this is a framework for HTML emails.
+        // It did not give me any errors, but it did give Joe errors.
+        // // This is aligning the links in the center.
+        // & > tbody > tr > th > table > tbody > tr > th {
+        //     text-align: center;
+
+            // a {
+            // This was done because Joe was having issues with his build, so he targeted the <a>s more specifically and added !important below.
+            // .link {
+            //     font-size: 12px !important;
+            //     color: #ffffff !important;
+            //     margin-right: 10px;
+
+            //     // This will remove the margin-right from the last <a>, the one with the privacy policy.  The margin-right is not needed on the last <a>.
+            //     &:nth-child(4) {
+            //         margin-right: 0;
+            //     }
+
+            //     &:hover {
+            //         color: $primary-color;
+            //     }
+            // }
+        // }
+    }
+
+    .privacy {
+        th {
+            // This removes the padding-bottom from the .privacy <p>.
+            // padding-bottom: 0 !important;
+            padding-bottom: 0;
+        }
+
+        // Here we are targeting the <th> that contains the <p> directly.
+        // & > tbody > tr > th > table > tbody > tr > th {
+        //     // I removed this padding-bottom because Joe added it in the p {} below.  Joe's had no padding-bottom before because he was having issues.  I was not, so the padding-bottom in the p {} added even more.
+        //     // padding-bottom: 30px;
+        // }
+
+        p {
+            color: #a0a1a3;
+            font-size: 10px;
+            padding-bottom: 30px;
+        }
+    }
+
+    .copyright, .address {
+        // This removed the padding between the <columns>s inside of the .copyright and .address <row>s.
+        th {
+            padding-bottom: 0;
+        }
+
+        .columns {
+            // // Here we are targeting the <columns>s inside of the .copyright and .address <row>s.
+            // & > table > tbody > tr > th {
+            // Now we can be more specific with the .columns p {}.
+            p {
+                color: #d0d0d1;
+                font-size: 13px;
+                font-weight: 400;
+                // This didn't really do anything for Joe's email or mine.
+                // padding-bottom: 0;
+            }
+        }
+    }
+}
+
+.center-tag {
+    min-width: auto;
+}
+
+@media all {
+    .button:hover, .link:hover {
+    // a:hover {
+        color:#d65600 !important;
+    }
+}
+
+// I had to do this media query because I used white-space: nowrap; above for larger screen sizes.  If I did not do this, the icons and text in the .sub-header <row> would get out of the email by shifting to the right.
+// @media only screen and (max-width: 597px) {
+    // .sub-header {
+    //     white-space: normal;
+    // }
+
+    // .info-section > table > tbody > tr > th {
+        // **********
+        // I don't really need this because there is already some sort of default padding on mine.  I decided to add this again because it is needed on smaller screens.
+        // padding-left: 10px;
+        // color: white;
+    // }
+// }
+
+// When doing padding, try to keep to a convention.  If you are doing padding-bottom, then keep on using that.  If you are doing padding-top, then keep on using that, instead.  We are going to stick to padding-bottom in the .deal_of_day <row>.
+
+// Sometimes, some of the things that we do in development, we cannot do in a build.  This happens because a build adds all of the styles directly inline.  If an element does not have a class directly attached to it, and if we are not changing the CSS styles within that class, what is going to happen is that Foundation will take for priority the styles that come with Foundation.  It is automatically choosing Foundation over our styles.  It is doing this because we do not have a class attached to the element.
+
+// If you run the npm start command all of the time, it can give you a fake look, it will give you like a web version of it.  Run the npm run build command from time to time to see how the email will actually look.  The npm run build command will show you how the email will look after all of the classes and styles get inlined.
+
+// You don't have to use the Foundation framework for every single section and at any moment you can start using <table>s.  You can use both togther.  There are times where certain specific sizes will not work with the Foundation framework.
+
+// Most of the styles will have vertical-align: top; by default.
+
+// You can also do changes in the _settings.scss file, but many times you only want changes in one specific spot and not everywhere.  This is the problem with frameworks.  They give you flexibility in one thing and take away in another thing.

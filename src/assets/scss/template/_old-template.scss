@@ -1,0 +1,41 @@
+.header {
+    background: red;
+    // You can use the background-color property as a fallback, in case some email clients cannot use the background property.
+    background-color: red;
+
+    // You should add a padding-bottom: 0; to the columns inside of the header because they will have a padding-bottom by default.
+    .columns {
+        // padding-bottom: 0;
+        // The best way to really target what's inside of the header is by actually targeting the columns.  This is why we are placing padding: 20px; here, instead of on top of the .columns selector.  Since we are also using the .collapse, we don't have padding on the left or the right.
+        // padding: 20px;
+
+        // Now we are going to do all of the padding manually.
+        padding-bottom: 20px;
+        // Here we are overriding the .collapse with !important.  Sometimes you need to override the CSS that comes with this framework.
+        padding-right: 20px !important;
+        padding-left: 20px !important;
+        padding-top: 20px;
+    
+        h1 {
+            color: white;
+        }
+    }
+}
+
+.footer {
+    background: black;
+    background-color: black;
+    
+    .footer-container {
+        background: black;
+        background-color: black;
+    }
+
+    a {
+        color: red;
+    }
+}
+
+// You can align an image by targeting it in the _template.scss file and writing something like float: right; or something else.  You can also do this by adding a class, like class="float-right" inside of the <img>.
+
+// Whenever you want to center any type of content, you can just put it in between two center tags.  To center a column, you need to put it between two empty columns.  

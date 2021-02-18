@@ -1,0 +1,199 @@
+<!-- Partials are used for when certain parts are used over and over. -->
+
+<container class="footer">
+    <row class="footer-top">
+        <!-- This valign="middle" is not working for Joe or for me. -->
+        <columns small="6" large="5" valign="middle" style="vertical-align: middle;" class="footer-top-logo-and-text">
+        <!-- <columns small="7" large="5" valign="middle" style="vertical-align: middle;"> -->
+        <!-- <columns small="8" large="5"> -->
+        <!-- <columns small="3" large="5"> -->
+        <!-- <columns small="6" large="5"> -->
+        <!-- <columns large="5"> -->
+        <!-- <columns large="6"> -->
+            <row>
+                <!-- I had to add class="footer-top-logo" in order to vertically center the logo in the .footer-top <row>. -->
+                <columns small="3" large="2" class="footer-top-logo">
+                <!-- <columns small="6" large="2"> -->
+                <!-- <columns large="2"> -->
+                    <!-- <img src="{{root}}/assets/img/kayak_files/logo_circle.png" class="circle-logo" /> -->
+                    <img src="https://i.imgur.com/XULeS6w.png" class="circle-logo" />
+                </columns>
+                <!-- valign="middle" is not doing anything for me and everything is already aligned to the middle.  It aligned the Kayak image and the two <span> next to it to the vertical center for Joe. -->
+                <!-- style="vertical-align: middle;" did not do anything either because these are already vertically centered. -->
+                <columns small="9" large="9" class="info-section" valign="middle" style="vertical-align: middle;">
+                <!-- <columns small="6" large="9" class="info-section" valign="middle" style="vertical-align: middle;"> -->
+                <!-- <columns large="9" class="info-section" valign="middle" style="vertical-align: middle;"> -->
+                    <span class="call-to-action">Download the app</span>
+                    <span class="info">Cheap flights, hotels & more</span>
+                </columns>
+            </row>
+        </columns>
+        <columns small="6" large="7" class="store-logos">
+        <!-- <columns small="5" large="7" class="store-logos"> -->
+        <!-- <columns small="4" large="7" class="store-logos"> -->
+        <!-- <columns small="9" large="7" class="store-logos"> -->
+        <!-- <columns small="6" large="7" class="store-logos"> -->
+        <!-- <columns large="7" class="store-logos"> -->
+        <!-- <columns large="6" class="store-logos"> -->
+            <row>
+                <!-- valign="middle" did not do anything for either of these <columns>.  style="vertical-align: middle;" did center the second <columns>, but not the first, because the first was already vertically centered. -->
+                <columns large="6" valign="middle" style="vertical-align: middle;">
+                    <!-- <img src="{{root}}/assets/img/kayak_files/appstore.png" /> -->
+                    <img src="https://i.imgur.com/nslwpaY.png" />
+                </columns>
+                <columns large="6" valign="middle" style="vertical-align: middle;">
+                    <!-- <img src="{{root}}/assets/img/kayak_files/playstore.png" /> -->
+                    <!-- We have to change the <img> src to an external link in order to test the email. -->
+                    <img src="https://i.imgur.com/7iJt3gY.png" />
+                </columns>
+            </row>
+        </columns>
+    </row>
+</container>
+
+<container>
+    <row class="footer-social">
+        <!-- valign="middle" did not do anything and I had to use style="vertical-align: middle;" for the Kayak logo to get vertically centered. -->
+        <!-- <columns class="logo-section" large="9" valign="middle" style="vertical-align: middle;"> -->
+        <columns class="logo-section" small="6" large="9" valign="middle" style="vertical-align: middle;">
+        <!-- <columns class="logo-section" large="10"> -->
+            <!-- <img src="{{root}}/assets/img/kayak_files/logo_orange.png" /> -->
+            <img src="https://i.imgur.com/OFHbfts.png" />
+        </columns>
+        <!-- The <columns> is already vertically centered, so valign and style did not do anything. -->
+        <columns small="6" large="3" valign="middle" style="vertical-align: middle;">
+        <!-- <columns large="2"> -->
+            <row class="social-icons">
+                <columns small="4" large="4">
+                    <!-- <img src="{{root}}/assets/img/kayak_files/facebook.png" /> -->
+                    <img src="https://i.imgur.com/aKMMFvh.png" />
+                </columns>
+                <columns small="4" large="4">
+                    <!-- <img src="{{root}}/assets/img/kayak_files/twitter.png" /> -->
+                    <img src="https://i.imgur.com/9i4y5RQ.png" />
+                </columns>
+                <columns small="4" large="4">
+                    <!-- <img src="{{root}}/assets/img/kayak_files/instagram.png" /> -->
+                    <img src="https://i.imgur.com/TBef4BQ.png" />
+                </columns>
+            </row>
+        </columns>
+    </row>
+</container>
+
+<container>
+    <row class="footer-menu">
+        <columns style="width: 90%;">
+            <row>
+                <columns small="4" large="3">
+                    <a href="#" class="text-center">
+                        <!-- Some images are repeated, but they are all the same. -->
+                        <!-- <img
+                            src="{{root}}/assets/img/kayak_files/airplane.png"
+                            class="icons"
+                        /> -->
+                        <img
+                            src="https://i.imgur.com/3Ww3dY2.png"
+                            class="icons"
+                        />
+                        Flights
+                    </a>
+                </columns>
+                <columns class="show-for-large" style="width: 1%;">
+                    <span class="menu-divider"></span>
+                </columns>
+                <columns small="4" large="3">
+                    <a href="#" class="text-center">
+                        <!-- <img
+                            src="{{root}}/assets/img/kayak_files/bed.png"
+                            class="icons"
+                        /> -->
+                        <img
+                            src="https://i.imgur.com/wfC1Voy.png"
+                            class="icons"
+                        />
+                        Hotels
+                    </a>
+                </columns>
+                <columns class="show-for-large" style="width: 1%;">
+                    <span class="menu-divider"></span>
+                </columns>
+                <columns small="4" large="3">
+                    <a href="#" class="text-center">
+                        <!-- <img
+                            src="{{root}}/assets/img/kayak_files/car.png"
+                            class="icons"
+                        /> -->
+                        <img
+                            src="https://i.imgur.com/noF4Vpy.png"
+                            class="icons"
+                        />
+                        Cars
+                    </a>
+                </columns>
+                <columns class="show-for-large" style="width: 1%;">
+                    <span class="menu-divider"></span>
+                </columns>
+                <columns small="4" large="3" class="show-for-large">
+                    <a href="#" class="text-center">
+                        <!-- <img 
+                            src="{{root}}/assets/img/kayak_files/umbrella.png" 
+                            class="icons"
+                        /> -->
+                        <img 
+                            src="https://i.imgur.com/J93HA7l.png" 
+                            class="icons"
+                        />
+                        Packages
+                    </a>
+                </columns>
+            </row>
+        </columns>
+    </row>
+</container>
+
+<container>
+    <row class="footer-bottom">
+        <columns>
+            <row class="lower-links">
+                <columns>
+                    <!-- Joe showed us why we should not use the <center> to align the links at the bottom.  Basically the framework has certain rules, like a min-width: 552px in this case, which will mess up our email layout and make this section too wide.  The min-width: 552px is greater than the space that is available, so it will stretch everything out. -->
+                    <!-- We had to add the .center-tag as a workaround so that the email layout won't get stretched out. I had issues when I added the <center>, but this fixed them. -->
+                    <!-- This <center> is causing the .footer-bottom <row> to be wider than the rest of the email sections when using npm start.  When we use npm run build, we don't see this bug because it takes the content of the .center-tag and inlines it through the style attribute.  If this is bothering you when you use npm start, then just use the style attribute and inline the content of the .center-tag yourself. -->
+                    <center class="center-tag" style="min-width: auto;">
+                        <!-- Joe added the .link to the <a>s because he was having issues with the build.  His <a>s were not getting styled properly.  I did not have this issue. -->
+                        <a href="#" class="link">Unsubscribe</a>
+                        <a href="#" class="link">Email Preferences</a>
+                        <a href="#" class="link">Feedback</a>
+                        <a href="#" class="link">Privacy Policy</a>
+                    </center>
+                </columns>
+            </row>
+            <row class="privacy">
+                <columns>
+                    <p>
+                        Prices, savings, and availability may vary. Additional restrictions may apply. Savings are not ensured. KAYAK does not sell tickets but provides a price comparison service. The deals in this newsletter were current at the time this email was published and subject to change based on date, time and availability, which may be extremely limited. KAYAK accepts no liability for inaccuracies arising from this or any other cause, including, but not limited to, expiration of deals and typographical error, we are not responsible for any loss, damages, or injury incurred by the deals herein. Unless otherwise specified, hotel prices are per night, based on double-occupancy rooms and do not include taxes and fees. Unless specified to be one-way (ow) or otherwise, flight prices are for round-trip (rt) economy class travel and include taxes and fees. If in doubt, always consult the agent or company supplying the tickets.
+                        Unless otherwise specified, package prices include flight + hotel, taxes and fees, but not baggage fees or other fees charged directly by the airline for the included flight.
+                        Cruise and car rental prices do not include taxes and fees. Please check the provider's webpage or contact the provider for additional details.
+                    </p>
+                </columns>
+            </row>
+            <row class="copyright">
+                <columns>
+                    <!-- We put this inside of a <p> so that we can target it.  Joe was having issues, I was not, until I put this in a <p>. -->
+                    <p>
+                        &#9400; 2019 KAYAK Software Corporation
+                    </p>
+                </columns>
+            </row>
+            <row class="address">
+                <columns>
+                    <!-- We also put this inside a <p> for the reason above.  I started having issues with this one, too, afterward. -->
+                    <p>
+                        7 Market Street Stamford, CT 06902-5810 US
+                    </p>
+                </columns>
+            </row>
+        </columns>
+    </row>
+</container>

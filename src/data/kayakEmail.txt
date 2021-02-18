@@ -1,0 +1,15 @@
+// I am saving the kayakEmail.json comments here, since you can't really put comments in a .json file.
+
+// We created an offers object array because we will be putting multiple offers in there.
+
+// This is the change we did for the image property for the dealOfTheDay object.
+// "image": "/assets/img/kayak_files/ireland.png"
+// "image": "https://i.imgur.com/S22Ye8T.png"
+
+// These are the changes we did for the image property of each object in the offers array.
+// "image": "/assets/img/kayak_files/cancun.png"
+// "image": "https://i.imgur.com/Lu1BRpG.png"
+// "image": "/assets/img/kayak_files/china.jpg"
+// "image": "https://i.imgur.com/iYt9uBt.jpg"
+// "image": "/assets/img/kayak_files/london.png"
+// "image": "https://i.imgur.com/9jCguXK.png"

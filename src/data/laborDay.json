@@ -1,0 +1,23 @@
+{
+    "title": "40% off on labor day",
+    "products": [
+        {
+            "title": "Yeezy 720 Boost",
+            "price": 400,
+            "product_url": "https://stockx-360.imgix.net/adidas-Yeezy-Boost-700-Inertia/Images/adidas-Yeezy-Boost-700-Inertia/Lv2/img01.jpg?auto=format,compress&w=559&q=90&dpr=2&updated_at=1606323708",
+            "image_url": "https://stockx-360.imgix.net/adidas-Yeezy-Boost-700-Inertia/Images/adidas-Yeezy-Boost-700-Inertia/Lv2/img01.jpg?auto=format,compress&w=559&q=90&dpr=2&updated_at=1606323708"
+        },
+        {
+            "title": "Air Jordans 13",
+            "price": 200,
+            "product_url": "https://stockx-360.imgix.net/Air-Jordan-13-Retro-Bred-2017/Images/Air-Jordan-13-Retro-Bred-2017/Lv2/img01.jpg?auto=format,compress&w=559&q=90&dpr=2&updated_at=1610396302",
+            "image_url": "https://stockx-360.imgix.net/Air-Jordan-13-Retro-Bred-2017/Images/Air-Jordan-13-Retro-Bred-2017/Lv2/img01.jpg?auto=format,compress&w=559&q=90&dpr=2&updated_at=1610396302"
+        },
+        {
+            "title": "Lebrons 8",
+            "price": 165,
+            "product_url": "https://stockx-360.imgix.net/Nike-Lebron-8-V2-Entourage/Images/Nike-Lebron-8-V2-Entourage/Lv2/img01.jpg?auto=format,compress&w=559&q=90&dpr=2&updated_at=1611592955",
+            "image_url": "https://stockx-360.imgix.net/Nike-Lebron-8-V2-Entourage/Images/Nike-Lebron-8-V2-Entourage/Lv2/img01.jpg?auto=format,compress&w=559&q=90&dpr=2&updated_at=1611592955"
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+{{!-- This is the base layout for your project, and will be used on every page. --}}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <!-- Here you see {{root}}.  What this is telling you is that this will be on a root file. -->
+  <link rel="stylesheet" type="text/css" href="{{root}}css/app.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width">
+  <!-- The braces you see here are part of Handlebars.  Handlebars is a template language.  This is basically JavaScript that allows us to run JavaScript within HTML.  Once it compiles, it turns it into a plain HTML file. -->
+  <!-- This part of the framework is called Panini, AKA Handlebars for Node.js, it's pretty much the same thing. -->
+  <!-- Whenever you see the braces, that means a variable, that you're using Handlebars. -->
+  <title>{{subject}}</title>
+  <!-- <style> -->
+</head>
+<body>
+    <!-- Once this thing is compiled, it will take the percentage variable from the index.html page and then it will come to the promotional.html page.  Wherever you see {{percentage}} in the promotional.html page, that will be replaced with whatever is inside of the percentage variable in the index.html page. -->
+    <!-- You can also use this in the index.html page to change things there, too. -->
+    {{percentage}}
+  <span class="preheader">{{description}}</span>
+  <table class="body">
+    <tr>
+      <td class="center" align="center" valign="top">
+        <center>
+            <!-- Whatever is inside of your pages will show up in here. -->
+            <!-- Wherever you see this, this is where your page's content is going to come from. -->
+            <!-- This will bring in whatever content was inside of your page. -->
+            {{> body}}
+            <!-- This will add the footer to the page.  It will add the footer partial. -->
+            <!-- Here you put in the > sign and the name of the partial, and it will add the partial. -->
+            {{> footer}}
+            <!-- You can also do if statements on your pages with #ifpage. -->
+            <!-- This is a helper. -->
+            <!-- If this is running on the index page, then print out the <h5> with Testing inside of it. -->
+            <!-- {{#ifpage "index"}}
+                <h5>Testing</h5>
+            {{/ifpage}} -->
+            <!-- #unlesspage is the opposite of #ifpage. -->
+            <!-- This is another helper. -->
+            <!-- If this is running on a page that is not the index page, then print out the <h5> with Testing inside of it. -->
+            <!-- {{#unlesspage "index"}}
+                <h5>Testing</h5>
+            {{/unlesspage}} -->
+            <!-- You can use helpers not only on the layouts, but also on the pages themselves. -->
+            <!-- This is the repeat helper. -->
+            <!-- This will print out the <h5> with Testing inside of it.  This will happen 10 times. -->
+            <!-- {{#repeat 10}}
+                <h5>Testing</h5>
+            {{/repeat}} -->
+        </center>
+      </td>
+    </tr>
+  </table>
+  <!-- prevent Gmail on iOS font size manipulation -->
+  <div style="display:none; white-space:nowrap; font:15px courier; line-height:0;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>
+</body>
+</html>
+
